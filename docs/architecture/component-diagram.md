@@ -1,6 +1,7 @@
 # Component Diagram
 
 ## System Components
+
 ```mermaid
 graph TD
     A[Component 1] --> B[Component 2]
