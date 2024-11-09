@@ -2,23 +2,46 @@
 
 ```mermaid
 erDiagram
-    USERS ||--o{ ORDERS : places
-    ORDERS ||--|{ ORDER_ITEMS : contains
+    USERS ||--o{ USER_ROLES : has
+    ROLES ||--o{ USER_ROLES : assigned_to
+    ROLES ||--o{ ROLE_PERMISSIONS : has
+    PERMISSIONS ||--o{ ROLE_PERMISSIONS : assigned_to
+    USERS ||--o{ AUDIT_LOGS : generates
+    
     USERS {
         int id
         string username
         string email
+        string password_hash
+        string status
+        datetime created_at
+        datetime updated_at
     }
-    ORDERS {
+    ROLES {
+        int id
+        string name
+        string description
+    }
+    PERMISSIONS {
+        int id
+        string name
+        string description
+    }
+    USER_ROLES {
+        int user_id
+        int role_id
+        datetime assigned_at
+    }
+    ROLE_PERMISSIONS {
+        int role_id
+        int permission_id
+    }
+    AUDIT_LOGS {
         int id
         int user_id
-        date order_date
-    }
-    ORDER_ITEMS {
-        int id
-        int order_id
-        string product_name
-        decimal price
+        string action
+        string details
+        datetime timestamp
     }
 ```
 
