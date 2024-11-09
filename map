@@ -1,0 +1,20 @@
+project-root/
+├── docs/
+│   ├── requirements/
+│   │   ├── business-requirements.md
+│   │   ├── functional-requirements.md
+│   │   └── non-functional-requirements.md
+│   ├── architecture/
+│   │   ├── system-context.md
+│   │   ├── component-diagram.md
+│   │   └── data-flow.md
+│   ├── api/
+│   │   ├── openapi.yaml        # OpenAPI/Swagger specification
+│   │   └── endpoints.md        # Additional API documentation
+│   └── database/
+│       ├── schema.sql         # SQL schema definition
+│       ├── erd.md            # Entity Relationship Diagram in Mermaid
+│       └── data-dictionary.md # Field descriptions
+├── tests/
+│   └── acceptance-criteria.md
+└── README.md
